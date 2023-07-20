@@ -8,7 +8,10 @@ import android.widget.TextView
 import com.example.gameofthrones.R
 import com.example.gameofthrones.data.GameOfThronesResponsesItem
 
-class GameOfThronesAdapter(private val houses: List<GameOfThronesResponsesItem>) : RecyclerView.Adapter<GameOfThronesAdapter.ViewHolder>(){
+class GameOfThronesAdapter(
+    private val houses: List<GameOfThronesResponsesItem>,
+    function: () -> Unit
+) : RecyclerView.Adapter<GameOfThronesAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)

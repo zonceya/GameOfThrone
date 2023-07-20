@@ -19,9 +19,6 @@
             android:label="@string/title_activity_house_details"
             android:theme="@style/Theme.GameOfThrones.NoActionBar" />
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
