@@ -1,23 +1,16 @@
 package com.example.gameofthrones.ui
 
-import android.content.ContentValues.TAG
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.ui.setupWithNavController
 import com.example.gameofthrones.R
-import com.example.gameofthrones.adapters.GameOfThronesAdapter
-import com.example.gameofthrones.api.GameOfThronesApi
-import com.example.gameofthrones.api.RetrofitInstance
-import com.example.gameofthrones.data.GameOfThronesResponsesItem
 import com.example.gameofthrones.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

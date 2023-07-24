@@ -1,16 +1,18 @@
 package com.example.gameofthrones.ui.housedetails
 
-import androidx.hilt.lifecycle.ViewModelInject
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.example.gameofthrones.data.GameOfThronesResponsesItem
 import com.example.gameofthrones.data.entities.HouseGameOfThrones
 import com.example.gameofthrones.data.repository.HouseRepository
 import com.example.gameofthrones.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HouseDetailsViewModel  @ViewModelInject constructor(
+@HiltViewModel
+class HouseDetailsViewModel  @Inject constructor(
     private val repository: HouseRepository
 ) : ViewModel() {
 

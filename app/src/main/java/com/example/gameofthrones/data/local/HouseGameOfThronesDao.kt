@@ -15,10 +15,10 @@ interface HouseGameOfThronesDao {
 
     @Query("SELECT * FROM houses WHERE id = :id")
     fun getHouse(id: Int): LiveData<HouseGameOfThrones>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(houses: List<HouseGameOfThrones>)
+    suspend fun insertAll(house: List<HouseGameOfThrones>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(houses: HouseGameOfThrones)
+
 }
