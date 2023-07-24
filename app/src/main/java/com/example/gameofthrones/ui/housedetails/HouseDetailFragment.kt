@@ -43,7 +43,7 @@ class HouseDetailFragment : Fragment(){
                 Resource.Status.SUCCESS -> {
                     bindHouse(it.data!!)
                     binding.progressBar.visibility = View.GONE
-                    binding.characterCl.visibility = View.VISIBLE
+                    binding.houseCl.visibility = View.VISIBLE
                 }
 
                 Resource.Status.ERROR ->
@@ -51,7 +51,7 @@ class HouseDetailFragment : Fragment(){
 
                 Resource.Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    binding.characterCl.visibility = View.GONE
+                    binding.houseCl.visibility = View.GONE
                 }
             }
         })
@@ -59,15 +59,15 @@ class HouseDetailFragment : Fragment(){
 
     private fun bindHouse(houseDetail: HouseGameOfThrones) {
         binding.name.text = houseDetail.name
-        binding.species.text = houseDetail.coatOfArms
-        binding.status.text = houseDetail.currentLord
-        binding.gender.text = houseDetail.founded
-        binding.gender.text = houseDetail.founder
-        binding.gender.text = houseDetail.heir
-        binding.gender.text = houseDetail.diedOut
-        binding.gender.text = houseDetail.overlord
-        binding.gender.text = houseDetail.region
-        binding.gender.text = houseDetail.words
+        binding.coatOfArms.text = houseDetail.coatOfArms
+        binding.currentLord.text = houseDetail.currentLord
+        binding.founded.text = houseDetail.founded
+        binding.founder.text = houseDetail.founder
+        binding.heir.text = houseDetail.heir
+        binding.diedOut.text = houseDetail.diedOut
+        binding.overlord.text = houseDetail.overlord
+        binding.region.text = houseDetail.region
+        binding.words.text = houseDetail.words
         Glide.with(binding.root)
             .load(houseDetail.url)
             .transform(CircleCrop())

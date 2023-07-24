@@ -15,7 +15,7 @@
         tools:visibility="gone" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/character_cl"
+        android:id="@+id/house_cl"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toBottomOf="@id/image" />
 
         <TextView
-            android:id="@+id/species_text"
+            android:id="@+id/region"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
@@ -51,7 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
-            android:id="@+id/species"
+            android:id="@+id/coatOfArms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -61,44 +61,71 @@
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
-            android:id="@+id/status_text"
+            android:id="@+id/words"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="Status:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/species_text" />
+            app:layout_constraintTop_toBottomOf="@+id/coatOfArms" />
 
         <TextView
-            android:id="@+id/status"
+            android:id="@+id/currentLord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/species" />
+            app:layout_constraintTop_toBottomOf="@+id/coatOfArms" />
 
         <TextView
-            android:id="@+id/gender_text"
+            android:id="@+id/heir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             android:text="Gender:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/status_text" />
+            app:layout_constraintTop_toBottomOf="@+id/currentLord" />
 
         <TextView
-            android:id="@+id/gender"
+            android:id="@+id/overlord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="60dp"
             tools:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/status" />
+            app:layout_constraintTop_toBottomOf="@+id/currentLord" />
+        <TextView
+            android:id="@+id/founded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            tools:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currentLord" />
+        <TextView
+            android:id="@+id/founder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            tools:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currentLord" />
+        <TextView
+            android:id="@+id/diedOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            tools:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currentLord" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
