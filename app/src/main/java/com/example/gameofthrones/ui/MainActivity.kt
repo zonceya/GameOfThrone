@@ -5,6 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gameofthrones.R
@@ -12,55 +15,23 @@ import com.example.gameofthrones.adapters.GameOfThronesAdapter
 import com.example.gameofthrones.api.GameOfThronesApi
 import com.example.gameofthrones.api.RetrofitInstance
 import com.example.gameofthrones.data.GameOfThronesResponsesItem
+import com.example.gameofthrones.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        private val TAG = MainActivity::class.java.simpleName
-    }
-    var retrofit = RetrofitInstance.getInstance()
-    var apiInterface = retrofit.create(GameOfThronesApi::class.java)
-
-    private var adapter: GameOfThronesAdapter? = null
-    private var houses: MutableList<GameOfThronesResponsesItem> = ArrayList()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        val navHostFragment: NavHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController: NavController = navHostFragment.navController
 
-        recyclerview.layoutManager = LinearLayoutManager(this)
-        adapter = GameOfThronesAdapter(houses) {
-            val intent = Intent(this, HouseDetailsActivity::class.java)
-            intent.putExtra(HouseDetailsActivity.HOUSE, "")
-            startActivity(intent)
-        }
-        recyclerview!!.adapter = adapter
-        fetchhouses()
+        val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(navController.graph)
+        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
 
     }
 
-    private fun fetchhouses() {
-        apiInterface.getHouses()?.enqueue(object : retrofit2.Callback<List<GameOfThronesResponsesItem>> {
-            override fun onResponse(
-                call: retrofit2.Call<List<GameOfThronesResponsesItem>>,
-                response: retrofit2.Response<List<GameOfThronesResponsesItem>>
-            ) {
-                val houses = response.body()
-                if (houses != null) {
-                    this@MainActivity.houses.addAll(houses.sortedWith(compareByDescending{ it.name }))
-                     adapter!!.notifyDataSetChanged()
-                }
-
-            }
-            override fun onFailure(
-                call: retrofit2.Call<List<GameOfThronesResponsesItem>>,
-                t: Throwable
-            ) {
-                Log.e(TAG, "Got error : " + t.localizedMessage)
-            }
-        })
-    }
 }
 
