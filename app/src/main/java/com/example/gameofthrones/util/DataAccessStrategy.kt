@@ -1,6 +1,7 @@
 package com.example.gameofthrones.util
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.LiveDataScope
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import com.example.gameofthrones.util.Resource.Status

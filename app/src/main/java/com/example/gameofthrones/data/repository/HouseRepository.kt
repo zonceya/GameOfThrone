@@ -20,6 +20,6 @@ constructor(
     fun getHouses() = performGetOperation(
         databaseQuery = { localDataSource.getAllHouses() },
         networkCall = { remoteDataSource.getHouses() },
-        saveCallResult = { it.results?.let { it -> localDataSource.insertAll(it) } }
+        saveCallResult = { localDataSource.insertAll(it.results) }
     )
 }

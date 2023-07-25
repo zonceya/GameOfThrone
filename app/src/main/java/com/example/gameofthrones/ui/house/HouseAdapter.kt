@@ -44,8 +44,7 @@ class HouseViewHolder(private val itemBinding: ItemHouseBinding, private val lis
     fun bind(item: HouseGameOfThrones) {
         this.house = item
         itemBinding.tvName.text = item.name
-       // itemBinding.speciesAndStatus.text = """${item.species} - ${item.status}"""
-        Glide.with(itemBinding.root)
+               Glide.with(itemBinding.root)
             .load(item.url)
             .transform(CircleCrop())
             .into(itemBinding.image)
