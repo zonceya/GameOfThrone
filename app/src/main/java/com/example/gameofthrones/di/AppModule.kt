@@ -25,7 +25,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRetrofit(gson: Gson) : Retrofit = Retrofit.Builder()
-        .baseUrl("https://anapioficeandfire.com/")
+        .baseUrl("https://anapioficeandfire.com/api/")
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 

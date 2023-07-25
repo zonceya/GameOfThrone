@@ -16,7 +16,7 @@ interface HouseGameOfThronesDao {
     @Query("SELECT * FROM houses WHERE id = :id")
     fun getHouse(id: Int): LiveData<HouseGameOfThrones>
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(house: List<HouseGameOfThrones>?)
+    suspend fun insertAll(house: kotlin.collections.List<com.example.gameofthrones.data.entities.HouseGameOfThrones>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(houses: HouseGameOfThrones)

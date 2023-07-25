@@ -7,9 +7,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface HouseService {
-    @GET("api/houses")
-    suspend fun getAllHouses() : Response<HouseList>
+    @GET("houses")
+    suspend fun getAllHouses() : Response<List<HouseGameOfThrones>>
 
-    @GET("api/houses/{id}")
+    @GET("houses/{id}")
     suspend fun getHouse(@Path("id") id: Int): Response<HouseGameOfThrones>
 }

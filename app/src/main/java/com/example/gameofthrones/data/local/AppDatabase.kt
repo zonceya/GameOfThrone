@@ -9,7 +9,7 @@ import com.example.gameofthrones.data.entities.HouseGameOfThrones
 import com.example.gameofthrones.data.entities.StringListTypeConverter
 
 @TypeConverters(StringListTypeConverter::class)
-@Database(entities = [HouseGameOfThrones::class], version = 2, exportSchema = false)
+@Database(entities = [HouseGameOfThrones::class], version = 3, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun houseDao(): HouseGameOfThronesDao
